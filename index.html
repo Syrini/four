@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GreenLeaf Café — fresh, locally-sourced coffee and food in the heart of the city. Order online or visit us today.">
+  <title>GreenLeaf Café | Fresh Coffee &amp; Food, Locally Sourced</title>
+
+  <!-- Performance: preconnect to the font host before the CSS requests it -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+
+  <!-- Single external stylesheet, no inline styles, no render-blocking JS in <head> -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Inline SVG favicon: no extra HTTP request for a separate .ico file -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%8D%83%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+
+  <!-- Accessibility: skip link lets keyboard/screen-reader users bypass the nav -->
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="#top" class="logo" aria-label="GreenLeaf Café home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
+          <path d="M12 2C7 2 3 6 3 11c0 5 4 9 9 11 5-2 9-6 9-11 0-5-4-9-9-9z" fill="currentColor"/>
+        </svg>
+        <span>GreenLeaf Café</span>
+      </a>
+
+      <!-- Accessible nav: landmark role is implicit via <nav>, current page marked with aria-current -->
+      <nav aria-label="Main navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="nav-toggle-btn">
+          <span class="sr-only">Menu</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <ul id="primary-menu" class="nav-list">
+          <li><a href="#top" aria-current="page">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="top" class="hero" aria-labelledby="hero-heading">
+      <div class="wrap hero-inner">
+        <div class="hero-text">
+          <h1 id="hero-heading">Good coffee.<br>Honest food.<br>Made close to home.</h1>
+          <p>GreenLeaf Café sources beans and produce from farms within 50 miles. Stop in, or order ahead for pickup.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Order for pickup</a>
+            <a class="btn btn-secondary" href="#menu">View the menu</a>
+          </div>
+        </div>
+
+        <!-- Decorative illustration: inline SVG instead of a raster image = zero extra
+             HTTP requests and it stays crisp at any screen size. Marked aria-hidden
+             because it adds no information beyond the heading above it. -->
+        <svg class="hero-art" viewBox="0 0 320 320" aria-hidden="true" focusable="false" width="320" height="320">
+          <circle cx="160" cy="160" r="150" fill="var(--color-accent-soft)"/>
+          <path d="M110 140h100l-8 90a20 20 0 0 1-20 18h-44a20 20 0 0 1-20-18z" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="6"/>
+          <path d="M210 150c30-4 40 20 20 34-10 7-20 4-20 4" fill="none" stroke="var(--color-primary)" stroke-width="6" stroke-linecap="round"/>
+          <path d="M130 110c4-14-6-20-2-32M160 110c4-14-6-20-2-32M190 110c4-14-6-20-2-32" fill="none" stroke="var(--color-primary)" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features" aria-labelledby="features-heading">
+      <div class="wrap">
+        <h2 id="features-heading" class="section-heading">Why people keep coming back</h2>
+        <ul class="feature-grid">
+          <li class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 11a8 8 0 1 1 16 0v3a5 5 0 0 1-5 5h-1M4 11v4a3 3 0 0 0 3 3h1" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <h3>Locally roasted</h3>
+            <p>Beans roasted weekly by a farm co-op 12 miles from our door.</p>
+          </li>
+          <li class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v18M5 8l7-5 7 5M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Made fresh daily</h3>
+            <p>Pastries and sandwiches prepared in-house every morning.</p>
+          </li>
+          <li class="feature-card">
+            <svg class="feature-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 21s-7-4.35-9.5-8.5C.5 8.5 3 5 6.5 5c2 0 3.5 1.2 4.5 2.5C12 6.2 13.5 5 15.5 5 19 5 21.5 8.5 19.5 12.5 17 16.65 12 21 12 21z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+            </svg>
+            <h3>Community first</h3>
+            <p>A portion of every sale goes to local school breakfast programs.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MENU -->
+    <section id="menu" class="menu" aria-labelledby="menu-heading">
+      <div class="wrap">
+        <h2 id="menu-heading" class="section-heading">A few favorites</h2>
+        <div class="menu-grid">
+          <article class="menu-item">
+            <h3>House Espresso</h3>
+            <p>Double shot, single-origin, pulled to order.</p>
+            <p class="price" aria-label="4 dollars 25 cents">$4.25</p>
+          </article>
+          <article class="menu-item">
+            <h3>Oat Milk Latte</h3>
+            <p>Espresso, steamed oat milk, light foam.</p>
+            <p class="price" aria-label="5 dollars 50 cents">$5.50</p>
+          </article>
+          <article class="menu-item">
+            <h3>Garden Sandwich</h3>
+            <p>Roasted vegetables, hummus, sourdough.</p>
+            <p class="price" aria-label="8 dollars 75 cents">$8.75</p>
+          </article>
+          <article class="menu-item">
+            <h3>Morning Bun</h3>
+            <p>Laminated dough, orange zest, cardamom sugar.</p>
+            <p class="price" aria-label="3 dollars 95 cents">$3.95</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about" aria-labelledby="about-heading">
+      <div class="wrap about-inner">
+        <div>
+          <h2 id="about-heading" class="section-heading">Our story</h2>
+          <p>GreenLeaf opened in 2019 with one goal: make it easy to eat and drink well without driving across town. Every supplier on our shelf is within a half-day's drive, and every recipe is one of ours.</p>
+          <p>We're open seven days a week, and every table is wheelchair accessible, as is our single-level entrance and restroom.</p>
+        </div>
+        <svg class="about-art" viewBox="0 0 200 200" aria-hidden="true" focusable="false" width="200" height="200">
+          <rect x="20" y="60" width="160" height="120" rx="8" fill="var(--color-surface)" stroke="var(--color-primary)" stroke-width="5"/>
+          <path d="M20 90h160" stroke="var(--color-primary)" stroke-width="5"/>
+          <circle cx="60" cy="130" r="14" fill="var(--color-accent-soft)"/>
+          <circle cx="140" cy="150" r="10" fill="var(--color-accent-soft)"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- CONTACT / ORDER FORM -->
+    <section id="contact" class="contact" aria-labelledby="contact-heading">
+      <div class="wrap contact-inner">
+        <div>
+          <h2 id="contact-heading" class="section-heading">Order ahead for pickup</h2>
+          <p>Fill this in and we'll have it ready. We'll confirm by whichever contact method you choose below.</p>
+          <address>
+            118 Elm Street, Rivertown<br>
+            <a href="tel:+15551234567">(555) 123-4567</a>
+          </address>
+        </div>
+
+        <form novalidate>
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" autocomplete="name" required aria-required="true">
+          </div>
+
+          <div class="form-row">
+            <label for="contact-method">Preferred contact method</label>
+            <select id="contact-method" name="contact-method">
+              <option value="phone">Phone</option>
+              <option value="email">Email</option>
+              <option value="text">Text message</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input type="email" id="email" name="email" autocomplete="email" required aria-required="true" aria-describedby="email-hint">
+            <p id="email-hint" class="field-hint">We only use this to confirm your order.</p>
+          </div>
+
+          <fieldset class="form-row">
+            <legend>Order type</legend>
+            <label class="radio-label">
+              <input type="radio" name="order-type" value="pickup" checked> Pickup
+            </label>
+            <label class="radio-label">
+              <input type="radio" name="order-type" value="dine-in"> Dine in
+            </label>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="notes">Order notes</label>
+            <textarea id="notes" name="notes" rows="3" aria-describedby="notes-hint"></textarea>
+            <p id="notes-hint" class="field-hint">Allergies, substitutions, pickup time — anything we should know.</p>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit order</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>&copy; 2026 GreenLeaf Café. All rights reserved.</p>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Performance: defer keeps this from blocking parsing/rendering; it only
+       runs after the DOM is ready, and it's a tiny amount of script. -->
+  <script defer>
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.getElementById('nav-toggle-btn');
+      var menu = document.getElementById('primary-menu');
+
+      toggle.addEventListener('click', function () {
+        var isOpen = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(isOpen));
+      });
+
+      // Accessibility: close the mobile menu with Escape and return focus to the toggle
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+          menu.classList.remove('is-open');
+          toggle.setAttribute('aria-expanded', 'false');
+          toggle.focus();
+        }
+      });
+
+      // Basic client-side validation feedback without blocking native validation
+      var form = document.querySelector('form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Thanks! This demo form does not send data anywhere yet.');
+      });
+    });
+  </script>
+
+</body>
+</html>
